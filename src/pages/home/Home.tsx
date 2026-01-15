@@ -5,7 +5,7 @@ function Home() {
       <>
           <div className="bg-gray-900 flex justify-center">
             <div className="container grid grid-cols-2 text-white">
-              <div className="flex flex-col gap-4 intems-center justify-center py-4">
+              <div className="flex flex-col gap-4 items-center justify-center py-4">
                  <h2 className="text-5xl font-bold">
                      Seja Bem Vinde!
               </h2>
@@ -14,7 +14,7 @@ function Home() {
             </p>
 
             <div className="flex justify-around w-1/2 mt-4">
-              <div className='rounded-full text-white border-white border-2 px-6 px-2'
+              <div className='rounded-full border-2 border-white  px-8 py-2 font-semibold hover:bg-white  hover:text-gray-900 transition'
               >
                 Nova Postagem
               </div>
