@@ -1,5 +1,4 @@
 import { createContext, type ReactNode, useState } from "react"
-import type UsuarioLogin from "../models/UsuarioLogin.ts"
 import { login } from "../services/Service"
 
 interface AuthContextProps {
@@ -51,7 +50,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
 
     return (
-        <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading }}>
+        <AuthContext.Provider value={{ usuario, handleLogout, handleLogin, isLoading }}>
             {children}
         </AuthContext.Provider>
     )

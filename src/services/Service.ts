@@ -4,7 +4,7 @@ const api = axios.create({
   baseURL: "https://blogpessoal-nest-vk7u.onrender.com",
 });
 
-export const cadasroUsuario = async (url: string, dados: Object, setDados: Function) => {
+export const cadastroUsuario = async (url: string, dados: Object, setDados: Function) => {
     const resposta = await api.post(url, dados);
     setDados(resposta.data);
 };

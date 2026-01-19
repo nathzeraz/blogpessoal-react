@@ -1,4 +1,4 @@
-import { use, useContext, useEffect, useState, type ChangeEvent, type FormEvent } from "react";
+import { useContext, useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import type UsuarioLogin from "../../assets/models/UsuarioLogin";
@@ -35,7 +35,7 @@ function login (e: FormEvent<HTMLFormElement>) {
     return (
         <>
             <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold ">
-                <form className="flex justify-center items-center flex-col w-1/2 gap-4" >
+                <form onSubmit={login}className="flex justify-center items-center flex-col w-1/2 gap-4" >
                     <h2 className="text-slate-900 text-5xl ">Entrar</h2>
                     <div className="flex flex-col w-full">
                         <label htmlFor="usuario">Usuário</label>
@@ -45,6 +45,8 @@ function login (e: FormEvent<HTMLFormElement>) {
                             name="usuario"
                             placeholder="Usuario"
                             className="border-2 border-slate-700 rounded p-2"
+                            value={usuarioLogin.usuario}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
 
                         />
                     </div>
@@ -56,6 +58,8 @@ function login (e: FormEvent<HTMLFormElement>) {
                             name="senha"
                             placeholder="Senha"
                             className="border-2 border-slate-700 rounded p-2"
+                            value={usuarioLogin.senha}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
 
                         />
                     </div>

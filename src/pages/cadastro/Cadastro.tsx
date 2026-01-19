@@ -2,7 +2,7 @@ import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import type Usuario from "../../assets/models/Usuario";
-import { cadasroUsuario } from "../../services/Service";
+import { cadastroUsuario } from "../../services/Service";
 
 function Cadastro() {
 
@@ -59,7 +59,7 @@ function Cadastro() {
 
         try {
             // Lógica para cadastrar o usuário
-            await cadasroUsuario('/usuarios/cadastrar', usuario, setUsuario);
+            await cadastroUsuario('/usuarios/cadastrar', usuario, setUsuario);
             alert('Usuário cadastrado com sucesso!');
         } catch (error) {
             alert('Erro ao cadastrar o usuário. Por favor, tente novamente.');
