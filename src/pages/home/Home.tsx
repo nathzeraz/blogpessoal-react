@@ -1,4 +1,6 @@
-import React from 'react';
+
+import ListaPostagens from "../../components/postagem/listapostagens/ListaPostagens";
+import ModalPostagem from "../../components/postagem/modalpostagem/ModalPostagem";
 
 function Home() {
   return (
@@ -14,10 +16,9 @@ function Home() {
             </p>
 
             <div className="flex justify-around w-1/2 mt-4">
-              <div className='rounded-full border-2 border-white  px-8 py-2 font-semibold hover:bg-white  hover:text-gray-900 transition'
-              >
-                Nova Postagem
-              </div>
+              
+              <ModalPostagem />
+
             </div>
           </div>
 
@@ -30,6 +31,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <ListaPostagens />
     </>
   );
 }
