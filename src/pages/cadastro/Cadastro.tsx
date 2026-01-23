@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import type Usuario from "../../assets/models/Usuario";
 import { cadastroUsuario } from "../../services/Service";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Cadastro() {
 
@@ -46,7 +47,7 @@ function Cadastro() {
         e.preventDefault();
 
         if (usuario.senha !== confirmarSenha) {
-            alert('As senhas não coincidem. Por favor, verifique e tente novamente.');
+            ToastAlerta('As senhas não coincidem. Por favor, verifique e tente novamente.', 'confirmar senha');
             setUsuario({
                 ...usuario,
                 senha: ''
@@ -60,9 +61,9 @@ function Cadastro() {
         try {
             // Lógica para cadastrar o usuário
             await cadastroUsuario('/usuarios/cadastrar', usuario, setUsuario);
-            alert('Usuário cadastrado com sucesso!');
+            ToastAlerta('Usuário cadastrado com sucesso!','cadastro usuario');
         } catch (error) {
-            alert('Erro ao cadastrar o usuário. Por favor, tente novamente.');
+            ToastAlerta('Erro ao cadastrar o usuário. Por favor, tente novamente.', 'erro cadastro usuario');
         } finally {
             setIsLoading(false);
         }
