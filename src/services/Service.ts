@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "https://blogpessoal-nest-vk7u.onrender.com",
-});
+export const api = axios.create({
+   baseURL: import.meta.env.VITE_API_URL
+})
 
 export const buscar = async (url: string, setDados: Function, header: Object) => {
     const resposta = await api.get(url, header)
